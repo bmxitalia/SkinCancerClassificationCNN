@@ -1,0 +1,12 @@
+\section{Conclusion and future works} \label{conclusion}
+	
+	Working on skin cancer classification required a lot of effort and time because it was the first time we challenged with imbalanced data. 
+	Compared to the other papers our results are not that good, but researchers used transfer learning and well-known architectures to obtain their results. Instead, we tried different approaches, such as class weighting and oversampling and we have built a CNN model from scratch that was able to learn something from the challenging HAM10000 dataset. 
+	We understood that with more data CNNs can achieve performances that are able to outperforms expert dermatologists, and this is an important milestone in oncology. In fact, having machines capable to early detect malignant skin cancers will allow the doctor to provide faster diagnoses and will lead to a high survival rate for this disease. Since we did not have enough time to perform other experiments we have thought to interesting future works:
+
+	\begin{itemize}
+		\item try to oversample HAM10000 with high quality images bring from hospitals' datasets or biopsy-proven datasets like DermoFit\cite{dermofit}. We tried to access to Dermofit, but it was expensive;
+		\item try to apply one vs all to HAM10000. This consists in building seven classifiers, one per class, to see if the model overall performances increase;
+		\item try to apply other transfer learning techniques. In most of the papers, researchers tried to train a pre-trained network across all the layers. We did not have enough time and resources to try this technique;
+		\item try to test the performances of our best model on other open access datasets, such as MED-NODE dataset\cite{mednode} or PH2 dataset. 	
+	\end{itemize}

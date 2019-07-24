@@ -1,0 +1,123 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{article4}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PTCRHK}{%
+         family={Philipp\bibnamedelima Tschandl},
+         familyi={P\bibinitperiod\bibinitdelim T\bibinitperiod},
+         given={Cliff Rosendahl \& Harald\bibnamedelima Kittler},
+         giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod \bibinitperiod
+  H\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PTCRHK1}
+    \strng{fullhash}{PTCRHK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{The HAM10000 dataset, a large collection of multi-source
+  dermatoscopic images of common pigmented skin lesions}
+    \field{year}{2018}
+  \endentry
+
+  \entry{article1}{article}{}
+    \name{author}{1}{}{%
+      {{hash=AERANJKSMSHMBSTBK}{%
+         family={Andre\bibnamedelima Esteva},
+         familyi={A\bibinitperiod\bibinitdelim E\bibinitperiod},
+         suffix={Brett\bibnamedelima Kuprel},
+         suffixi={B\bibinitperiod\bibinitdelim K\bibinitperiod},
+         given={Roberto A. Novoa Justin Ko Susan M. Swetter Helen M. Blau \&
+  Sebastian\bibnamedelima Thrun},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod N\bibinitperiod
+  J\bibinitperiod K\bibinitperiod S\bibinitperiod M\bibinitperiod
+  S\bibinitperiod H\bibinitperiod M\bibinitperiod B\bibinitperiod
+  \bibinitperiod S\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AEBKRANJKSMSHMBST1}
+    \strng{fullhash}{AEBKRANJKSMSHMBST1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Dermatologist-level classification of skin cancer with deep
+  neural networks}
+    \field{year}{2017}
+  \endentry
+
+  \entry{article3}{article}{}
+    \name{author}{1}{}{%
+      {{hash=ARSKHS}{%
+         family={Amirreza\bibnamedelima Rezvantalab},
+         familyi={A\bibinitperiod\bibinitdelim R\bibinitperiod},
+         suffix={Habib\bibnamedelima Safigholi},
+         suffixi={H\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={Somayeh\bibnamedelima Karimijeshni},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ARHSSK1}
+    \strng{fullhash}{ARHSSK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Dermatologist Level Dermoscopy Skin Cancer Classification
+  Using Different Deep Learning Convolutional Neural Networks Algorithms}
+    \field{year}{2018}
+  \endentry
+
+  \entry{ph2}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{https://www.fc.up.pt/addi/ph2\%20database.html}}
+    \field{note}{Accessed: 2019-07-11}
+    \field{title}{PH2 dataset}
+  \endentry
+
+  \entry{article2}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PLAVDB}{%
+         family={Phillip\bibnamedelima Ly},
+         familyi={P\bibinitperiod\bibinitdelim L\bibinitperiod},
+         suffix={Doina\bibnamedelima Bein},
+         suffixi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Abhishek\bibnamedelima Verma},
+         giveni={A\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PLDBAV1}
+    \strng{fullhash}{PLDBAV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{New Compact Deep Learning Model for Skin Cancer Recognition}
+    \field{year}{2018}
+  \endentry
+
+  \entry{dermofit}{misc}{}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\url{https://homepages.inf.ed.ac.uk/rbf/DERMOFIT/datasets.htm}}
+    \field{note}{Accessed: 2019-07-11}
+    \field{title}{DermoFit dataset}
+  \endentry
+
+  \entry{mednode}{misc}{}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\url{http://www.cs.rug.nl/~imaging/databases/melanoma_naevi/}}
+    \field{note}{Accessed: 2019-07-11}
+    \field{title}{MED-NODE dataset}
+  \endentry
+\enddatalist
+\endinput

@@ -1,0 +1,8 @@
+TASSONOMIA
+mel - melanoma - maligno
+nv - Melanocytic nevi - benigno
+df - Dermatofibroma - benigno
+bkl - Benign keratosis - benigno
+bcc - Basal cell carcinoma - maligno
+vasc - Vascular skin lesions - benigno
+akiec - Actinic Keratoses (Solar Keratoses) and Intraepithelial Carcinoma (Bowen’s disease) - benigno ma rischio di trasformarsi in maligno

@@ -1,0 +1,15 @@
+Validation: accuracy =  0.7306733167082294  loss =  1.0920217978092204
+Test: accuracy =  0.7234148777429902  loss =  1.0244764713603023
+              precision    recall  f1-score   support
+
+       akiec       0.42      0.50      0.46        60
+         bcc       0.47      0.62      0.54        97
+         bkl       0.44      0.67      0.53       224
+          df       0.25      0.52      0.34        27
+         mel       0.49      0.44      0.47       246
+          nv       0.92      0.81      0.86      1320
+        vasc       0.73      0.76      0.75        29
+
+    accuracy                           0.72      2003
+   macro avg       0.53      0.62      0.56      2003
+weighted avg       0.76      0.72      0.74      2003

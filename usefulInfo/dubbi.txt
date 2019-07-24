@@ -1,0 +1,39 @@
+gradient descent type -> batch, mini batch, SGD
+
+random weights inizialization -> deve essere fatto per permettere alla rete di apprendere
+infatti se i pesi fossero inizializzati ugualmente, a causa della simmetria della 
+rete neurale feed-forward ogni aggiornamento cambierebbe i pesi nella stessa maniera. Ciò
+significa che un intero strato farebbe la stessa cosa che potrebbe fare un singolo neurone.
+È necessario quindi rompere queste simmetrie con la random weights inizialization.
+I pesi devono essere poi inizializzati a bassi valori per aiutare SGD, infatti per evitare fin da subito
+una lenta convergenza a causa del vanishing del gradiente è necessario tenere i pesi il più bassi possibile
+in valore assoluto, per fare in modo che l'input delle activation function sia il più basso possibile e quindi la derivata massima
+
+momentum -> permette di stabilizzare la convergenza e renderla più veloce, ad ogni aggiornamento dei
+pesi si tiene conto del gradiente appena calcolato e di una parte del gradiente precedentemente calcolato. Questa informazione è contenuta nel vettore velocity.
+Il parametro alpha permette di settare il tradeoff tra i gradienti da utilizzare -> questa tecnica fa si che si evitano gli
+zig-zag (vettori in direzioni opposte causati da randomizzazione di sgd) del normale sgd e vincola i vettori ad andare verso la soluzione.
+Inoltre, in caso di plateu questo aiuta perché essendo il gradiente molto piccolo, dopo ogni aggiornamento questo viene sommato ai
+gradienti precedenti, aumentando di volta in volta la size dello spostamento nella funzione errore.
+
+activation function types -> le funzioni di attivazione permettono di rendere gli output delle unità all'interno di un certo range. Infatti l'input della funzione di attivazione è imprevedibile,
+in quanto dato dalla somma pesata di tutti gli input dell'unità. Inoltre le funzioni di attivazioni permettono di capire quali sono le unità che ad ogni epoca contribuiscono o meno all'apprendimento.
+Queste sono dette unità attivate. Esistono varie funzioni di attivazione, le più comuni erano sigmoid e tanh ma avevano il problema del vanishing del gradiente. Per cui si preferisce utilizzare la funzione ReLu,
+dove la derivata sulla parte positiva della funzione è sempre costante e di conseguenza anche il gradiente, che non sarà mai piccolo, a meno che l'output della ReLu non sia 0 perché l'input è compreso tra -inf e 0.
+In tal caso, se molte unità dovessero avere questo problema è necessario utilizzare una funzione diversa, ad esempio la leaky rely, che invece di spegnere totalmente alcune unità durante il training, penalizza
+semplicemente gli input piccoli, evitando il mancato contributo di alcune unità durante il training.
+
+batch normalization -> per evitare vanishing del gradiente si normalizzano gli input delle unità. L'input è sempre bounded all'interno
+di un range in questo modo. Cosi si evitano valori troppo grandi o troppo piccoli dell'input che comportebbe un output della funzione di 
+attivazione su una delle sue code, dove il gradiente è molto piccolo. Questo problema poi rischia di propagarsi lungo tutta la rete.
+
+nesterov momentum -> è differente dal momentum solo per come viene calcolato il gradiente
+
+adam optimizer -> combina RMSprop con momentum
+
+activation maps -> più sono le activation maps e più filtri vengono applicati all'immagine di input con scale differenti, questo permette di trovare
+dei key points che sono più robusti alle trasformazioni dell'input, come ad esempio la risuluzione dell'immagine
+
+gaussian filter -> i parametri mu e sigma permetteono di gestire quanto si deve tener conto del vicinato dei pixel ad ogni applicazione del filtro, e quindi determinano la poteza dello smoothing effect applicato sull'immagine.
+A seconda di come questi parametri cambiano si avranno bluring effect differenti.
+È possibile ottenere il medesimo output con combinazioni diverse di filter size e parametri della gaussiana. Inoltre è possibile ottenere la stessa immagine con diversa risoluzione applicando il gaussian filter.

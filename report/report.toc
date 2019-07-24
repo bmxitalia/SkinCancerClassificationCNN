@@ -1,0 +1,23 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {american}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Introduction}{1}{section.0.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Related works}{1}{section.0.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Dataset}{2}{section.0.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{akiec}{3}{section*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{bcc}{3}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{bkl}{3}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{df}{3}{section*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{nv}{3}{section*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{mel}{3}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{vasc}{3}{section*.8}

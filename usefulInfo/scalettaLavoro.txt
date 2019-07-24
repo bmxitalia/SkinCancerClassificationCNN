@@ -1,0 +1,9 @@
+0. capire che libreria usare: MLTOOLBOX ha tre funzioni che fanno tutto da sole ed è molto semplice, si lanciano i job e fa tutto google. Con tensorflow per ora non ho idea di come fare transfer learning ma sarebbe utile costruire un eseguibile tf... Forse il codice eseguito era effettivamente tf, boh...
+1. costruire algoritmo di partizionamento per le nostre 7 classi in modo da rendere solo la classificazione tra benigno maligno
+2. capire che tipo di preprocessing fare, in teoria fa tutto da solo Google 
+3. capire come fare trasnfer learning
+4. effettuare sia il test sulle sole due classi che su tutte e 7
+5. tenere dei dati come test set
+6. provare ad allenare su tutto il training set e poi usare il test set di stanford utilizzando il loro algoritmo di partizionamento per ottenere le sole nostre due classi
+7. vedere come si comporta la nostra implementazione su nuovi dati
+8. capire cosa usa internamente la rete dal paper e dropout e batch normalization

@@ -1,0 +1,116 @@
+\documentclass[11pt,oneside]{book}
+\usepackage[margin=1.2in]{geometry}
+\usepackage[toc,page]{appendix}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{caption}
+
+% Added packages
+\usepackage[british,UKenglish,USenglish,english,american]{babel}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=bibtex,style=numeric-comp,hyperref,backref,sorting=none]{biblatex}
+\addbibresource{bibliography.bib}
+\usepackage{tabularx} 
+\usepackage{ltxtable} 
+
+\usepackage{enumitem,booktabs}
+\usepackage[referable]{threeparttablex}
+\renewlist{tablenotes}{enumerate}{1}
+\makeatletter
+\setlist[tablenotes]{label=\tnote{\arabic*},ref=\arabic*,itemsep=\z@,topsep=\z@skip,partopsep=\z@skip,parsep=\z@,itemindent=\z@,labelindent=\tabcolsep,labelsep=.2em,leftmargin=*,align=left,before={\footnotesize}}
+\makeatother
+
+
+\hypersetup{
+	colorlinks   = true, %Colours links instead of ugly boxes
+	urlcolor     = blue, %Colour for external hyperlinks
+	linkcolor    = blue, %Colour of internal links
+	citecolor   = red %Colour of citations
+}
+\setcounter{secnumdepth}{3}
+\renewcommand*{\arraystretch}{1.5}
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+	
+	\captionsetup[figure]{margin=1.5cm,font=small,labelfont={bf},name={Figure},labelsep=colon,textfont={it}}
+	\captionsetup[table]{margin=1.5cm,font=small,labelfont={bf},name={Table},labelsep=colon,textfont={it}}
+	\setlipsumdefault{1}
+	
+	\frontmatter
+	
+	\begin{titlepage}
+		
+		
+		% -------------------------------------------------------------------
+		% Front page
+		% -------------------------------------------------------------------
+		
+		\begin{center}
+			{\LARGE University of Padua}\\[1cm]
+			{\Large Department of Computer Science}\\[2cm]
+			\includegraphics[width=5cm]{images/logo-unipd.png}\\[2cm]
+			\linespread{1.2}\huge {\bfseries Skin cancer classification using CNNs}\\[1.5cm]
+			\linespread{1}
+			{\Large Alberto Bezzon 1211016 \\ Tommaso Carraro 1210937}\\[1cm]
+			%{\large \emph{Supervisor:} Supervisor's Name}\\[1cm] % if applicable
+			\large This report resumes the Cognitive Services course project\\[0.5cm] 
+			Academic year 2018 - 2019
+		\end{center}
+		
+	\end{titlepage}
+	
+	
+	% -------------------------------------------------------------------
+	% Abstract
+	% -------------------------------------------------------------------
+	\mainmatter
+	\setcounter{page}{1}
+	\input{sections/abstract.tex}
+	\newpage
+	\setcounter{page}{2}
+	
+	
+	% -------------------------------------------------------------------
+	% Contents, list of figures, list of tables
+	% -------------------------------------------------------------------
+	
+	%\tableofcontents
+	%\listoffigures
+	%\listoftables
+	
+	
+	% -------------------------------------------------------------------
+	% Main sections (as required)
+	% -------------------------------------------------------------------
+	
+	\input{sections/introduction.tex}
+	\input{sections/related_works.tex}
+	\input{sections/dataset.tex}
+	\input{sections/method.tex}
+	\input{sections/experiments.tex}
+	\input{sections/conclusion.tex}
+	
+	
+	% -------------------------------------------------------------------
+	% Bibliography
+	% -------------------------------------------------------------------
+
+	%\bibliographystyle{unsrtnat} 
+	%\bibliography{bibliography} 
+	\printbibliography
+	
+	
+	
+	% -------------------------------------------------------------------
+	% Appendices
+	% -------------------------------------------------------------------
+	
+	%\begin{appendices}
+		%\input{sections/appendixA.tex}
+		%\input{sections/appendixB.tex}
+	%\end{appendices}
+	
+\end{document}

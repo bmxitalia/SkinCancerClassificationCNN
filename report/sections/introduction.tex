@@ -1,0 +1,22 @@
+\section{Introduction} \label{introduction}
+
+	Skin cancer is the most widespread cancer and one of the most dangerous because of the number of cases that not only exceeds the combined total of new cases for prostate cancer, breast cancer, lung cancer, and colorectal cancer, but also it increases from year to year. In particular, malignant melanoma is a prevalent type of cancer that is especially deadly. It is well known that early detection and proper treatments for new malignant skin cancer cases are very important to ensure high survival rate. Indeed, with an appropriate treatment in an early stage, survival rates are very promising. Otherwise, the survival rate for melanoma decreases from 99\% to 14\% in more advanced stages.
+	
+	\smallskip
+	
+	Usually, the way to detect a melanoma is by inspecting the visual details of skin, but it has a low precision. Another way is dermoscopy, a non-invasive technique that can capture a high resolution image of the skin which enables dermatologists to detect features that are invisible to the naked eye. This technique makes easier to diagnose melanoma, but it is time consuming and it is based on the clinician skills. Moreover, because of the resemblance between malignant skin tumors and benign skin lesions in visual features, it is very hard for dermatologists to differentiate between them.
+	
+	\smallskip
+	
+	In recent years, deep learning, and specifically convolutional neural networks (CNNs), have reached very good performances in skin cancer classification tasks and have allowed computers to outperform dermatologists. For this reason, in our project we have tried to improve the accuracy of skin cancer detection using state-of-the-art CNN models and techniques. In particular, we have used these models to distinguish between seven common types of skin cancers that are included in the HAM10000, a popular and recent dataset made for this specific task. We obtained the best performances on the test set using class weighting technique to train a simple CNN model built from scratch. 
+	
+	\bigskip
+	
+	This document is organized as follows:  
+	\begin{itemize}
+		\item Section \ref{related_works} presents related works for ``Skin cancer classification'';
+		\item Section \ref{dataset} provides the description of the dataset used in our experiments;
+		\item Section \ref{proposed_model} includes the approach we used for solving the problem;
+		\item Section \ref{experiments} presents the experiments we made on the proposed model;
+		\item Section \ref{conclusion} contains the conclusion and future works.
+	\end{itemize}

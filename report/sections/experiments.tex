@@ -1,0 +1,74 @@
+\section{Experiments} \label{experiments}
+		
+	\subsubsection{Class weighting}
+	
+		The first technique we tried to deal with the problem of imbalanced data is class weighting. This technique consists in assigning a weight to each class in such a way that allows to the model to give more emphasis to minority classes and less emphasis to majority classes. The idea is to assign more priority to the classes with less examples and less priority to the classes with more examples. In this way it is possible to balance the training set for the model. 
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=14cm]{images/secondMatrix.png}
+			\caption{Confusion matrix of the proposed model with class weighting}
+			\label{fig:second-matrix}
+		\end{figure}
+		
+		In Figure \ref{fig:second-matrix} we show the performances on the test set of our proposed model with the class weighting technique.
+		Even if the test accuracy of the model with class weighting is lower (65\% against 77\% of the previous model), it is possible to see that the correct classifications are better distributed over all the classes and this is our main goal. In fact, with class weighting the 48\% of dermatofibromas are correctly classified and the 53\% of melanomas too. Moreover, it seems that with the class weighting our proposed model is able to distinguish better between dermatofibromas and melanocytic nevis, but also between melanomas and melanocytic nevis. Finally, it seems that also the number of misclassified examples is better distributed on the matrix. There are still difficulties in distinguishing between dermatofibromas and basal cell carcinomas, but we think it is possible to make the model more accurate with more training data.
+		
+	\subsubsection{Oversampling with data augmentation}
+	
+		The last experiment we tried on HAM10000 is the oversampling of minority classes with data augmentation. After splitting the dataset as reported in Section \ref{dataset}, the number of examples in Melanocytic nevi class was 4868, so we applied data augmentation to all the other classes to obtain a balanced training set. After applying these procedures, we obtained a 34.076 images training set.
+		To oversampling the training set we have used Keras' ImageDataGenerator with the following parameters:
+		\begin{itemize}
+			\item rotation range: 45; 
+			\item zoom range: 0.2; 
+			\item width shift range: 0.1;
+			\item height shift range: 0.1;
+			\item horizontal flip: true; 
+			\item vertical flip: true;
+			\item fill mode: nearest.
+		\end{itemize}
+		
+		After data augmentation we checked that the generated images were good and then we trained our proposed model on the augmented training set.
+		In Figure \ref{fig:third-matrix} we show the performances on the test set of our proposed model with the oversampling technique.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=13cm]{images/thirdMatrix.png}
+			\caption{Confusion matrix of the proposed model with oversampling}
+			\label{fig:third-matrix}
+		\end{figure}
+		
+		Unfortunately, we did not achieve the desired results, in fact even if the model trained on the oversampled dataset is better in predicting dermatofibromas (52\% well classified dermatofibromas against 48\% of the previous model), and this explains the higher macro average F1 (0.56 against 0.51), it reintroduces difficulties in distinguish between melanomas and melanocytic nevis (25\% of melanomas are classified like a melanocytic nevi). 
+		Moreover, due to aggressive data augmentation (we added more than 4000 augmented images to Dermatofibroma class) the model tends to badly overfit, even if regularization techniques are configured. In Figure \ref{fig:overfitting-data-aug} is possible to see the overfitting of this last model.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=15cm]{images/overfitting-data-aug.png}
+			\caption{Overfitting of the proposed model with oversampling}
+			\label{fig:overfitting-data-aug}
+		\end{figure}
+		
+		In Table \ref{tab:experiments_results} is possible to compare the performances on the test set of the previous three models in terms of F1 scores, macro average F1 and accuracy.
+		
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{ |>{\centering\arraybackslash}p{2.5cm}|c|c|c|c|c|c|c|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{2cm}| }
+				\hline
+				\textbf{Model} & \textbf{akiec} & \textbf{bcc} & \textbf{bkl} & \textbf{df} & \textbf{mel} & \textbf{nv} & \textbf{vasc} & \textbf{Macro average} & \textbf{Test accuracy} \\ \hline
+				
+				Proposed model & 0.44 & 0.55 & 0.54 & 0.17 & 0.39 & 0.90 & 0.56 & 0.51 & 0.77 \\ \hline
+				Class weighting & 0.38 & 0.50 & 0.45 & 0.27 & 0.48 & 0.80 & 0.71 & 0.51 & 0.65 \\ \hline
+				Oversampling & 0.46 & 0.54 & 0.53 & 0.34 & 0.47 & 0.86 & 0.75 & 0.56 & 0.72 \\ \hline
+				
+			\end{tabular}		
+			\caption{Experiments' results}
+			\label{tab:experiments_results}
+		\end{table}
+	
+		The model trained on the oversampled training set gives better results in terms of performance measures compared to the other models, but tends to misclassify too much melanomas, that are the most important class for our goal.
+		So, in conclusion, even if the last model performs relatively well, we prefer to select the model with class weighting as our best model because it has performances that better meet our goal of reducing the number of misclassified skin lesions.
+		
+		
+		
+		
+		

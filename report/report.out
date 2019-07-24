@@ -1,0 +1,12 @@
+\BOOKMARK [1][-]{section.0.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.0.2}{Related works}{}% 2
+\BOOKMARK [1][-]{section.0.3}{Dataset}{}% 3
+\BOOKMARK [1][-]{section.0.4}{Proposed model}{}% 4
+\BOOKMARK [2][-]{subsection.0.4.1}{Experimental enviroment}{section.0.4}% 5
+\BOOKMARK [2][-]{subsection.0.4.2}{Performance measures choice}{section.0.4}% 6
+\BOOKMARK [2][-]{subsection.0.4.3}{Transfer learning attempt}{section.0.4}% 7
+\BOOKMARK [2][-]{subsection.0.4.4}{Proposed model architecture}{section.0.4}% 8
+\BOOKMARK [2][-]{subsection.0.4.5}{Regularization techniques and training settings}{section.0.4}% 9
+\BOOKMARK [2][-]{subsection.0.4.6}{Proposed model performances}{section.0.4}% 10
+\BOOKMARK [1][-]{section.0.5}{Experiments}{}% 11
+\BOOKMARK [1][-]{section.0.6}{Conclusion and future works}{}% 12

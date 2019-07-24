@@ -1,0 +1,35 @@
+Note articolo
+- classificatione di lesioni della pelle con CNN allenata direttamente dalle immagini, ogni esempio di training è costituito dall'immagine in pixel e un etichetta che indica il tipo di malattia associata all'immagine
+- dataset: 129450 esempi divisi in 2032 malattie. Il dataset comprende 3374 immagini di dermoscopie
+- 21 dermatologi sui seguenti due task: carcinomi cheratinociti contro cheratosi seborroiche benigne (identificazione cancri comuni) e melanomi maligni contro nevi benigni (identificazione cancri mortali) (due classification task)
+- Metodo: creazione di una nuova tassonomia della malattia e un algoritmo di partizionamento della malattia che mappa le singole malattie in classi di allenamento
+- Come essere robusti alla variabilità delle immagini scattate con smartphone? Usando una rete pre-trained con 1.41 milioni di immagini
+- la rete non richiede lavoro manuale di preprocessing se non minimo: una sola rete viene usata per le foto e per le dermoscopie e viene allenata direttamente sui pixel raw
+- dimostrato che l'algoritmo generalizza bene
+- tre task dove l'algoritmo funziona bene quanto le opinioni dei dermatologi: melanoma  classification,  melanoma classification using dermoscopy and  carcinoma  classification
+- architettura utilizzata: inception v3 https://arxiv.org/abs/1512.00567. Rete pre trained su circa un millione di immagini e utilizzo di un approccio di transfer learning
+- dataset: immagini etichettate da dermatologi esperti organizzate in una tassonomia strutturata ad albero dove ciascuna delle 2032 malattie del dataset formano le foglie dell'albero
+- split dataset: 127,463 training and validation images and 1,942 biopsy-labelled test images
+- l'algoritmo di partizionamento serve per fare in modo di ridurre il numero di classi per rendere l'algoritmo più robusto ad identificare semplicemente la categoria di malattia e la sua malignità e non la specifica malattia all'interno di una categoria (non si riuscirebbe a generalizzare)
+- funzionamento: distribuzione di probabilità su queste classi ridotte (softmax layer)
+- test efficacia algoritmo: 9 fold cross validation in due casi
+    - test su sole tre classi (benigno, maligno, non-neoplastic), ovvero i primi tre nodi dell'albero di tassonomia -> circa 72 % di accuratezza su queste tre classi
+    - test su 9 classi (nodi sul secondo livello dell'albero): queste specifiche 9 classi perché le malattie in ogni classe hanno trattamenti medici simili -> circa 55 % di accuratezza come anche i dermatologi
+- si è dimostrato che più la classe è fine e più l'algoritmo funziona bene (fine significa meno classi nel dataset)
+- i test fatti fino ad ora servono solo a capire se la rete apprende perché le etichette erano date dai medici e non sostenute da prove di biopsia
+- test su solo etichette garantite da biopsia su due task specifici: keratinocyte carcinoma compared to benign seborrheic keratosis e melanocytic (malignant melanoma compared to benign nevus)
+- due prove per il test melanocytic: 
+   - una usa immagini standard
+   - l'altra usa immagini dermoscopiche (sarebbero i due step per riconoscere la malattia che un dermatologo dovrebbe fare)
+- sulle foto si può vedere che le lesioni benigne condividono delle proprietà con le maligne (difficile distinguere)
+- misure usate per testare le performance sono precision e recall da notare che quando il test set viene fatto passare nella rete, per ogni immagine viene restituita una distribuzione di probabilità su tutte le malattie etichettate, quindi per decidere la classe si usa un threshold di probabilità superato il quale appartiene ad una classe oppure ad un'altra
+- i punti rossi sul plot rappresentano la precision e recall ottenuta da ognuno dei 21 dermatologi: la CNN sorpassa quasi tutti i dermatologi (curva blu sopra i punti rossi)
+- se si guarda la media dei dermatologi (in verde) è sempre sotto la curva della rete
+- la AUC di ogni curva va sempre oltre il 91%
+- per questo specifico test sono state usate un sottoinsieme delle immagini di test
+- il test completo è la figura sotto con delle differenze trascurabili rispetto al test più ristretto -> la rete funziona molto bene
+- alla fine dicono semplicemente che il metodo può essere esteso a molti altri task ospedalieri e che se i dati di training sono sufficienti si possono avere sempre buone performance
+- bisogna fare richiesta all'università di stanford per avere i dati
+
+Guida molto interessante su come allenare solo la classification part della inception v3 -> molto facile ma da capire il discorso che il preprocessing avviene tra la feature extraction part e la classification part https://codelabs.developers.google.com/codelabs/cpb102-txf-learning/index.html#0
+ 
